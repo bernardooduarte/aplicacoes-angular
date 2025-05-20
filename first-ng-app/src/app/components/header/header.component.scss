@@ -3,7 +3,33 @@ header {
     padding-inline: 16px;
     padding-block: 8px;
     background-color: #333;
-    color:white;
+    color: white;
     align-items: center;
     justify-content: space-between;
+
+    span {
+        cursor: pointer;
+        &:hover {
+            color: #777;
+        }
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            cursor: pointer;
+
+            &:hover {
+                color: #777;
+            }
+        }
+    }
 }

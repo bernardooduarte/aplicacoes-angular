@@ -1,20 +1,20 @@
-// todo-item.component.ts
 import { Component, input, output } from '@angular/core';
 import { Todo } from '../../model/todo.type';
-import { HighlightCompletedTodoDirective } from '../../directives/highlight-completed-todo/highlight-completed-todo-directive.component';
+import { HighlightCompletedTodoDirective } from '../../directives/highlight-completed-todo-directive';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-todo-item',
   standalone: true,
-  imports: [HighlightCompletedTodoDirective],
+  imports: [HighlightCompletedTodoDirective, UpperCasePipe],
   templateUrl: './todo-item.component.html',
-  styleUrls: ['./todo-item.component.scss'] // Corrigido aqui
+  styleUrl: './todo-item.component.scss',
 })
 export class TodoItemComponent {
   todo = input.required<Todo>();
   todoToggled = output<Todo>();
 
-  todoClicked(){
+  todoClicked() {
     this.todoToggled.emit(this.todo());
   }
 }
